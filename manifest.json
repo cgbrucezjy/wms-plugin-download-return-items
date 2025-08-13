@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "WMS Excel Exporter",
+    "version": "1.0",
+    "description": "Exports WMS data to Excel and embeds images by bypassing CORS.",
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://ebizware.yunwms.com/*"],
+        "js": ["exceljs.min.js","content.js"],
+        "all_frames": true
+      }
+    ],
+    "host_permissions": [
+      "*://*.aliyuncs.com/*"
+    ]
+  }
